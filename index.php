@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-img">
     <?php
         $acao = $_GET['acao'] ?? 'index';
         switch ($acao):
@@ -22,8 +22,8 @@
         case 'index':
     ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-success d-flex justify-content-center">
-      <a class="navbar-brand" href="#">Recipes</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent d-flex justify-content-center">
+      <p class="navbar-brand">Geladeira Inteligente</p>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,13 +31,16 @@
 
       <div class="container">
         <div class="box">
-          <h2>Seja Bem-Vindo!</h2>
-          <a class="btn btn-primary" href="./view/sign.view.html">Cadastrar</a> 
-          <button type="submit" class="btn btn-secondary" href="./view/home.view.php">Entrar</button>
-        </div>  
-      </div>
+          <div class="row">
+            <h1 class="">Seja Bem-Vindo!</h1>
+          </div>
 
-    
+          <div class="pt-5 row">
+            <a class="btn btn-primary mb-4" href="./view/sign.view.php">Cadastrar</a>
+            <a class="btn btn-primary mb-4" href="./view/login.view.php">Entrar</a>
+          </div>
+        </div>
+      </div>
 
     <?php
         break;
