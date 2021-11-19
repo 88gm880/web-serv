@@ -7,11 +7,12 @@ FLUSH PRIVILEGES;
 
 CREATE TABLE usuarios(
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR (250) NOT NULL,
     email varchar(250) NOT NULL,
     hash_senha varchar(250) NOT NULL
 );
 
-INSERT INTO usuarios (email, hash_senha) VALUES ('teste@teste', 'teste');
+INSERT INTO usuarios (email, hash_senha, nome) VALUES ('teste@teste', 'teste', 'Joaozinho');
 
 CREATE TABLE receitas(
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,

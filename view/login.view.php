@@ -5,7 +5,7 @@
 
     session_start();
     if(!empty($_SESSION['logado']) && $_SESSION['logado'] == true) {
-        header('Location: home.view.php');
+        header('location: home.view.php');
     }
 ?>
 
@@ -29,7 +29,7 @@
     <main>
       <h3>Efetue login</h3>
       <form action="/web-serv/index.php?acao=login" method="POST">
-        <?php if ($erro) : ?>
+        <?php if (!empty($_GET['erro']) && $_GET['erro']) : ?>
             <div style="background: #fafae1; padding: 15px; margin-bottom: 24px;">
                 📢 Usuário ou Senha inválidos! Tente novamente.
             </div>

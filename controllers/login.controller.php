@@ -6,7 +6,11 @@ function checkLogin($bd, $email, $senha)
         $sql = "SELECT hash_senha FROM usuarios WHERE email = '$email'";
         $query = $bd->query($sql);
         if($query->num_rows > 0):
-            return true;
+            $hash_senha = $query->fetch_object()->hash_senha;
+            if($hash_senha == $senha){
+                return true;
+            }
+            return false;
         else:
             echo "Não há usuarios";
             return false;
@@ -36,22 +40,23 @@ function checkLogin($bd, $email, $senha)
 
 }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-      require('conexaoMySql.php');
+    require('conexaoMySql.php');
+    session_start();
 
-      $email = $_POST["email"] ?? "";
-      $senha = $_POST["senha"] ?? "";
+    $email = $_POST["email"] ?? "";
+    $senha = $_POST["senha"] ?? "";
 
-       if (checkLogin($bd, $email, $senha)) {
+    if (checkLogin($bd, $email, $senha)) {
         $_SESSION['logado'] = true;
-        $erro = false;
+        //$erro = false;
         header("location: view/home.view.php");
         //exit('Funcionou tudo');
-      }
-      else{
-        $erro=true
-        header("location: view/login.view.php");
-        }
     }
+    else{
+        //echo "deu ruim";
+        header("location: view/login.view.php?erro=true");
+    }
+}
 

@@ -1,10 +1,12 @@
 
 <?php
-    echo "uhul";
     session_start();
 
+    //echo $_SESSION;
     if(empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
-        //header('Location: login.php');
+        if($_SESSION['logado'])
+            header('Location: login.view.php?empty=true');
+        echo "no";
     }
 ?>
 
