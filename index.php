@@ -33,11 +33,23 @@
 </head>
 
 <body>
-
-  <main>
-    <h2>Seja Bem-Vindo!</h2>
-    <a href="./view/login.php">Menu de opções</a>
-  </main>
+    <?php
+        $acao = $_GET['acao'] ?? 'index';
+        switch ($acao):
+        case 'login':
+            require('controllers/login.controller.php');
+            //header('Location: view/login.view.php');
+            break;
+        case 'index':
+    ?>
+    <main>
+        <h2>Seja Bem-Vindo!</h2>
+        <a href="./view/login.view.php">Menu de opções</a>
+    </main>
+    <?php
+        break;
+        endswitch;
+    ?>
 
 </body>
 

@@ -1,36 +1,11 @@
-<!-- <?php
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $erro = false;
-
-    session_start(); //inicializar a sessão com chave aleatória
-
-    hash($password);
-
-    // check se as credenciais do usuario estão ok
-    if ($email == 'webserv123' && $password == '123456') {
-        $_SESSION['logado'] = true;
-        $_SESSION['email'] = 'Admin';
-        $_SESSION['cartao'] = '411111111111111';
-
-        header('Location: pagina_segura.php');
-    } else if (!empty($_POST)) {
-        $erro = true;
-    }
-
-    //Checar se o usuário já está logado
-    if (!empty($_SESSION['logado']) && $_SESSION['logado']) {
-        header('Location: pagina_segura.php');
-    }
-?> -->
-
 
 <?php
-    session_start();
+    $usuario
+    /*session_start();
 
     if(empty($_SESSION['logado']) || $_SESSION['logado'] == false) {
         header('Location: login.php');
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +26,7 @@
 
 <body>
     <header>
-        <h2>🔐 Entre em sua conta </h2>
+        <h2>A sua home </h2>
     </header>
 
     <main>

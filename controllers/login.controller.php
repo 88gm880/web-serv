@@ -3,7 +3,7 @@
 function checkLogin($bd, $email, $senha)
 {
     try{
-        $sql = "SELECT hash_senha FROM usuarios WHERE email = '$email'";
+        $sql = "SELECT hash_senha FROM cliente WHERE email = '$email'";
         $query = $bd->query($sql);
         if($query->num_rows > 0):
             return true;
@@ -36,18 +36,23 @@ function checkLogin($bd, $email, $senha)
 
 }
 
-$errorMsg = "";
-//if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $errorMsg = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  require('conexaoMySql.php');
+      require('conexaoMySql.php');
 
-  $email = $_POST["email"] ?? "teste@teste";
-  $senha = $_POST["senha"] ?? "teste";
+      $email = $_POST["email"] ?? "";
+      $senha = $_POST["senha"] ?? "";
 
-   if (checkLogin($bd, $email, $senha)) {
-    header("location: home.html");
-    exit('Funcionou tudo');
-  } 
-  else
-    $errorMsg = "Dados incorretos";
-//}
+       if (checkLogin($bd, $email, $senha)) {
+        $_SESSION['logado'] = true;
+        $erro = false;
+        header("location: view/home.view.php");
+        //exit('Funcionou tudo');
+      }
+      else{
+        $erro = true;
+        header("location: view/login.view.php");
+        }
+    }
+

@@ -3,6 +3,10 @@
     $password = $_POST['password'] ?? '';
     $erro = false;
 
+    session_start();
+    if(!empty($_SESSION['logado']) && $_SESSION['logado'] == true) {
+        header('Location: home.view.php');
+    }
 ?>
 
 <!doctype html>
@@ -24,7 +28,13 @@
   <div class="container">
     <main>
       <h3>Efetue login</h3>
-      <form>
+      <form action="/web-serv/index.php?acao=login" method="POST">
+        <?php if ($erro) : ?>
+            <div style="background: #fafae1; padding: 15px; margin-bottom: 24px;">
+                📢 Usuário ou Senha inválidos! Tente novamente.
+            </div>
+        <?php endif; ?>
+
         <!-- E-mail e senha -->
         <div class="col-sm-12">
           <label for="email" class="form-label">E-mail</label><br>
