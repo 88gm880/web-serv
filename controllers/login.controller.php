@@ -3,7 +3,7 @@
 function checkLogin($bd, $email, $senha)
 {
     try{
-        $sql = "SELECT hash_senha FROM cliente WHERE email = '$email'";
+        $sql = "SELECT hash_senha FROM usuarios WHERE email = '$email'";
         $query = $bd->query($sql);
         if($query->num_rows > 0):
             return true;
@@ -36,7 +36,6 @@ function checkLogin($bd, $email, $senha)
 
 }
 
-    $errorMsg = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       require('conexaoMySql.php');
@@ -51,7 +50,7 @@ function checkLogin($bd, $email, $senha)
         //exit('Funcionou tudo');
       }
       else{
-        $erro = true;
+        $erro=true
         header("location: view/login.view.php");
         }
     }

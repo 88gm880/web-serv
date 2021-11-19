@@ -38,7 +38,8 @@
         switch ($acao):
         case 'login':
             require('controllers/login.controller.php');
-            //header('Location: view/login.view.php');
+            break;
+        case 'cadastrar':
             break;
         case 'index':
     ?>
