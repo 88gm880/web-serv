@@ -1,42 +1,24 @@
 
-    html {
-      margin: 0;
-      padding: 0;
-    }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-image: url("images/bg2.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-    }
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  }
+.box {
+  padding: 100px;
+  background: rgb(255, 255, 255);
 
-    .container {
-      position: relative;
-      height: 100vh;
-    }
+}
 
-    main {
-      padding: 3rem;
-      padding-top: 2rem;
-      width: 60%;
-      border: 0.5px solid lightgray;
-      border-radius: 5px;
-      background-color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+.bg-img{
+  background-image: url(./imgs/comida-arabe.jpg);
+}
 
-    form {
-      margin-bottom: 2rem;
-    }
-
-    main>h3 {
-      text-align: center;
-      color: blue;
-      margin-bottom: 2rem;
-    }
