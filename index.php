@@ -36,7 +36,7 @@
 
   <main>
     <h2>Seja Bem-Vindo!</h2>
-    <a href="index.php">Menu de opções</a>
+    <a href="./view/login.php">Menu de opções</a>
   </main>
 
 </body>

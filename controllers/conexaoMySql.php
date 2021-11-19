@@ -31,7 +31,7 @@ function mysqlConnect()
 */
 
   $db_host = "localhost";
-  $db_username = "3961934_web";
+  $db_username = "userweb123";
   $db_password = "senhaweb123";
   $db_name = "web_serv";
 
